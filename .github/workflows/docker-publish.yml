@@ -22,7 +22,7 @@ jobs:
     - name: Проверить зависимости
       run: go mod tidy
 
-   - name: Собрать проект
+    - name: Собрать проект
       run: go build ./...
 
     - name: Прогнать тесты
