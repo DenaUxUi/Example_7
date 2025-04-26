@@ -10,18 +10,10 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-<<<<<<< HEAD
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-=======
     port := os.Getenv("PORT")
     if port == "" {
         port = "8081"  
     }
->>>>>>> 981f8df0fe2d4bc9692a9716c430dcd9ecae3f1b
-
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", indexHandler)
 
