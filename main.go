@@ -12,18 +12,18 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
     port := os.Getenv("PORT")
     if port == "" {
-        port = "8081"  
+        port = "8080"  
     }
 
     mux := http.NewServeMux()
     mux.HandleFunc("/", indexHandler)
 
-    println("Запуск сервера на порту", port)
+    println("Launching", port)
 
     err := http.ListenAndServe(":"+port, mux)
     if err != nil {
-        println("Ошибка сервера:", err.Error())
+        println("Server error:", err.Error())
     }
 
-    println("Сервер завершился") 
+    println("Session is end") 
 }
