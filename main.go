@@ -1,29 +1,29 @@
 package main
 
 import (
-    "net/http"
-    "os"
+	"net/http"
+	"os"
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("<h1>Hello, World!</h1>"))
+	w.Write([]byte("<h1>Hello, World!</h1>"))
 }
 
 func main() {
-    port := os.Getenv("PORT")
-    if port == "" {
-        port = "8080"  
-    }
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 
-    mux := http.NewServeMux()
-    mux.HandleFunc("/", indexHandler)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", indexHandler)
 
-    println("Launching", port)
+	println("Launching", port)
 
-    err := http.ListenAndServe(":"+port, mux)
-    if err != nil {
-        println("Server error:", err.Error())
-    }
+	err := http.ListenAndServe(":"+port, mux)
+	if err != nil {
+		println("Server error:", err.Error())
+	}
 
-    println("Session is end") 
+	println("Session is end")
 }
